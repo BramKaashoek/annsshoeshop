@@ -7,6 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Shoe.destroy_all
+User.destroy_all
+
+user1 = User.create!(email:"henk@jan.com", password:"123456" )
 
 shoe1=Shoe.create!(name: "Arigato Red Shoe", image: "http://res.cloudinary.com/dfkclhjps/image/upload/v1496133393/hightop_k4td0k.jpg", brand: "Arigato", price: 50, size: 39, color: "red", material: "leather", release_year: 2005)
 shoe2=Shoe.create!(name: "Summer Beach Sandal", image: "http://res.cloudinary.com/dfkclhjps/image/upload/v1496133756/2_VD._V528849524__o7eyiv.jpg" , brand: "Unknown", price: 30 , size: 40 , color: "brown", material: "leather", release_year: 2010)
