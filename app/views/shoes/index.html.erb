@@ -2,10 +2,19 @@
 </div>
 
 <div class="container">
-  <% @shoes.each do |shoe| %>
-    <div class="col-md-3">
-      <%= image_tag shoe.image, class: "shoe_images"%>
-      <h3><%= link_to shoe.name, shoe_path(shoe)%></h3>
+  <div class="col-md-8 col-md-offset-3">
+     <% @categories.each do |category| %>
+      <%= link_to category.name, shoes_path(filter: category.name), class: "btn btn-default" %>
+      <% end %>
+
   </div>
-  <%end%>
+  <div class="col-md-12">
+    <% @shoes.each do |shoe| %>
+      <div class="col-md-3">
+        <%= image_tag shoe.image, class: "shoe_images"%>
+        <h3><%= link_to shoe.name, shoe_path(shoe)%></h3>
+    </div>
+    <%end%>
+  </div>
+
 </div>
