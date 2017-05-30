@@ -24,3 +24,10 @@ shoe3=Shoe.create!(name: "Business Man Shoe", image: "http://res.cloudinary.com/
 # shoe11=Shoe.create!(name: , remote_image_url: "", brand: , price: , size: , color: , material: , release_year: )
 # shoe12=Shoe.create!(name: , remote_image_url: "", brand: , price: , size: , color: , material: , release_year: )
 # shoe13=Shoe.create!(name: , remote_image_url: "", brand: , price: , size: , color: , material: , release_year: )
+
+
+OrderStatus.delete_all
+OrderStatus.create! id: 1, name: "In Progress"
+OrderStatus.create! id: 2, name: "Placed"
+OrderStatus.create! id: 3, name: "Shipped"
+OrderStatus.create! id: 4, name: "Cancelled"
