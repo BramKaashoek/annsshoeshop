@@ -3,14 +3,19 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.container img {
-  width: 200px;
-  height: 200px;
-}
+// .container img {
+//   width: 200px;
+//   height: 200px;
+// }
 
 .shoe_images {
   width: 200px;
   height: 200px;
+}
+
+.big_shoe {
+  width: 500px;
+  height: 600px;
 }
 
 /*.col-md-3 {
