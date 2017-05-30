@@ -7,6 +7,22 @@
 //   width: 200px;
 //   height: 200px;
 // }
+
+.jumbotron {
+  
+  height: 600px;
+  background-image: url("http://res.cloudinary.com/dfkclhjps/image/upload/v1496146396/annsshoeshop2_ac9bjj.jpg");
+  background-size: cover;
+}
+
+.navbar-color {
+  background-color:  #ffffff;
+  min-height: 80px;
+  margin-top: 20px;
+}
+
+
+
 .col-md-6 {
   overflow: hidden;
 }
