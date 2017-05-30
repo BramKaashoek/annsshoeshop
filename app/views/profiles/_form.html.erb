@@ -14,14 +14,23 @@
   </div>
 
   <div class="form-group">
-    <label>Shoe Size/label>
+    <label>Shoe Size </label>
     <%= f.select :shoe_size, options_for_select(36..48), class: "form-control" %>
   </div>
+
+<% if @profile.profile_picture.present? %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+
+      <%= image_tag @profile.profile_picture %>
+    </div>
+  </div>
+  <% end %>
 
     <span class="btn btn-default">
       Upload Profile Picture
       <br>
-      <%= f.file_field :image, type: :file %>
+      <%= f.file_field :profile_picture, type: :file %>
     </span>
   </div>
 
