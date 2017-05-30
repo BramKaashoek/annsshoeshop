@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170530123555) do
+ActiveRecord::Schema.define(version: 20170530131101) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,35 @@ ActiveRecord::Schema.define(version: 20170530123555) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "order_items", force: :cascade do |t|
+    t.bigint "shoe_id"
+    t.bigint "order_id"
+    t.decimal "unit_price", precision: 12, scale: 3
+    t.integer "quantity"
+    t.decimal "total_price", precision: 12, scale: 3
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_order_items_on_order_id"
+    t.index ["shoe_id"], name: "index_order_items_on_shoe_id"
+  end
+
+  create_table "order_statuses", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.decimal "subtotal"
+    t.decimal "tax"
+    t.decimal "shipping"
+    t.decimal "total"
+    t.bigint "order_status_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_status_id"], name: "index_orders_on_order_status_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -52,6 +81,7 @@ ActiveRecord::Schema.define(version: 20170530123555) do
     t.integer "release_year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "active"
   end
 
   create_table "users", force: :cascade do |t|
@@ -71,6 +101,9 @@ ActiveRecord::Schema.define(version: 20170530123555) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "order_items", "orders"
+  add_foreign_key "order_items", "shoes"
+  add_foreign_key "orders", "order_statuses"
   add_foreign_key "profiles", "users"
   add_foreign_key "shoe_categories", "categories"
   add_foreign_key "shoe_categories", "shoes"
