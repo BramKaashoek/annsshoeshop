@@ -1,0 +1,10 @@
+<div class="container">
+  <% @shoes.each do |shoe| %>
+    <div class="col-md-3">
+      <%= image_tag shoe.image, class: "shoe_images"%>
+      <h3><%= link_to shoe.name, shoe_path(shoe)%></h3>
+  </div>
+  <%end%>
+</div>
+
+<h1>Hello World</h1>
