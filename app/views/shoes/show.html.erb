@@ -14,12 +14,11 @@
 
   <div class="col-md-2">
     <h1>&nbsp;</h1>
-    <h3>&nbsp;</h3>
     <ul class="list-unstyled">
     <% @shoe.categories.each do |category| %>
-    <li><%= category.name %></li>
+    <li><%= link_to category.name, shoes_path(filter: category.name ), class: "btn btn-default" %></li>
+    <br>
     <% end %>
   </ul>
   </div>
 </div>
-
