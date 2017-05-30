@@ -3,6 +3,8 @@ class Profile < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
 
+  mount_uploader :profile_picture, ImageUploader
+
   def full_name
     "#{first_name} #{last_name}"
   end
