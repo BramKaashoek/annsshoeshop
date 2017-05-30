@@ -9,19 +9,19 @@
 // }
 
 .jumbotron {
-  
+
   height: 600px;
   background-image: url("http://res.cloudinary.com/dfkclhjps/image/upload/v1496146396/annsshoeshop2_ac9bjj.jpg");
   background-size: cover;
+  margin-top: 0px;
 }
 
 .navbar-color {
   background-color:  #ffffff;
-  min-height: 80px;
-  margin-top: 20px;
+  min-height: 60px;
+  padding-top: 20px;
+
 }
-
-
 
 .col-md-6 {
   overflow: hidden;
@@ -37,6 +37,7 @@
   // height: 600px;
   background-size: cover;
   max-height: 500px;
+  margin-right: 50px;
 
 
   // -moz-transition: all 0.3s;
