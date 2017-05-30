@@ -8,12 +8,23 @@
 
 Shoe.destroy_all
 User.destroy_all
+Category.destroy_all
 
 user1 = User.create!(email:"henk@jan.com", password:"123456" )
 
-shoe1=Shoe.create!(name: "Arigato Red Shoe", image: "http://res.cloudinary.com/dfkclhjps/image/upload/v1496133393/hightop_k4td0k.jpg", brand: "Arigato", price: 50, size: 39, color: "red", material: "leather", release_year: 2005)
-shoe2=Shoe.create!(name: "Summer Beach Sandal", image: "http://res.cloudinary.com/dfkclhjps/image/upload/v1496133756/2_VD._V528849524__o7eyiv.jpg" , brand: "Unknown", price: 30 , size: 40 , color: "brown", material: "leather", release_year: 2010)
-shoe3=Shoe.create!(name: "Business Man Shoe", image: "http://res.cloudinary.com/dfkclhjps/image/upload/v1496133692/_57_cgaees.jpg", brand: "Van Bommel", price: 800, size: 45, color: "boring", material: "plastic", release_year: 1880)
+cat1 = Category.create!(name: "Sporty")
+cat2 = Category.create!(name: "Party")
+cat3 = Category.create!(name: "Summer")
+cat4 = Category.create!(name: "Formal")
+cat5 = Category.create!(name: "Winter")
+cat6 = Category.create!(name: "Casual")
+
+
+
+
+shoe1=Shoe.create!(name: "Arigato Red Shoe", image: "http://res.cloudinary.com/dfkclhjps/image/upload/v1496133393/hightop_k4td0k.jpg", brand: "Arigato", price: 50, size: 39, color: "red", material: "leather", release_year: 2005, categories: [cat1, cat6])
+shoe2=Shoe.create!(name: "Summer Beach Sandal", image: "http://res.cloudinary.com/dfkclhjps/image/upload/v1496133756/2_VD._V528849524__o7eyiv.jpg" , brand: "Unknown", price: 30 , size: 40 , color: "brown", material: "leather", release_year: 2010, categories: [cat3, cat6])
+shoe3=Shoe.create!(name: "Business Man Shoe", image: "http://res.cloudinary.com/dfkclhjps/image/upload/v1496133692/_57_cgaees.jpg", brand: "Van Bommel", price: 800, size: 45, color: "boring", material: "plastic", release_year: 1880, categories: [cat4])
 # shoe4=Shoe.create!(name: , remote_image_url: "", brand: , price: , size: , color: , material: , release_year: )
 # shoe5=Shoe.create!(name: , remote_image_url: "", brand: , price: , size: , color: , material: , release_year: )
 # shoe6=Shoe.create!(name: , remote_image_url: "", brand: , price: , size: , color: , material: , release_year: )

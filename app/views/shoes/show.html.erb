@@ -2,7 +2,7 @@
   <div class="col-md-6">
     <%= image_tag @shoe.image, class:"big_shoe" %>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-4">
     <h1><%= @shoe.name %></h1>
     <h3><%= @shoe.brand %></h3>
     <h5>Color: <%= @shoe.color %></h5>
@@ -11,4 +11,15 @@
     <h1>€ <%= @shoe.price %></h1>
     <a class="btn btn-primary" href="#">Buy Now</a>
   </div>
-</section>
+
+  <div class="col-md-2">
+    <h1>&nbsp;</h1>
+    <h3>&nbsp;</h3>
+    <ul class="list-unstyled">
+    <% @shoe.categories.each do |category| %>
+    <li><%= category.name %></li>
+    <% end %>
+  </ul>
+  </div>
+</div>
+
