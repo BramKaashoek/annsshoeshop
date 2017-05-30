@@ -11,5 +11,6 @@ class ShoesController < ApplicationController
 
   def show
     @shoe = Shoe.find(params[:id])
+    @order_item = @shoe.order_items
   end
 end
