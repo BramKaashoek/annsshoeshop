@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   root "shoes#index"
   resources :profiles, only: [:new, :edit, :create, :update]
   resources :shoes
+  resources :carts
 end
