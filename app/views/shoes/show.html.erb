@@ -9,7 +9,10 @@
     <h5>Material: <%= @shoe.material %></h5>
     <h5>Size: <%= @shoe.size %></h5>
     <h1>€ <%= @shoe.price %></h1>
-    <%= link_to "Buy Now", new_cart_path(user_id: current_user, shoe_id: @shoe.id), class: "btn btn-primary"%>
+    <%= form_for @cart_item, remote: true do |f| %>
+    <%= f.hidden_field :shoe_id, value: @shoe.id %>
+    <%= f.submit "Add to cart", class: "btn btn-primary"  %>
+    <% end %>
   </div>
 
   <div class="col-md-2">
