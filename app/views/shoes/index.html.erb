@@ -1,64 +1,64 @@
 <div class="jumbotron">
 </div>
 
-<div class="container text-center">
-  <div class="dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select a Category
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <% @categories.each do |category| %>
-        <li><%= link_to category.name, shoes_path(filter: category.name), class: "btn btn-default" %></li>
-      <%end%>
-    </ul>
+  <div class="container text-center">
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select a Category
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <% @categories.each do |category| %>
+          <li><%= link_to category.name, shoes_path(filter: category.name), class: "btn btn-default" %></li>
+        <%end%>
+      </ul>
 
-    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select a Brand
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <% @categories.each do |category| %>
-        <li><%= link_to category.name, shoes_path(filter: category.name), class: "btn btn-default" %></li>
-      <%end%>
-    </ul>
+      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select a Brand
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <% @categories.each do |category| %>
+          <li><%= link_to category.name, shoes_path(filter: category.name), class: "btn btn-default" %></li>
+        <%end%>
+      </ul>
 
-    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select a Color
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <% @categories.each do |category| %>
-        <li><%= link_to category.name, shoes_path(filter: category.name), class: "btn btn-default" %></li>
-      <%end%>
-    </ul>
+      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select a Color
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <% @categories.each do |category| %>
+          <li><%= link_to category.name, shoes_path(filter: category.name), class: "btn btn-default" %></li>
+        <%end%>
+      </ul>
 
-    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select a Material
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <% @categories.each do |category| %>
-        <li><%= link_to category.name, shoes_path(filter: category.name), class: "btn btn-default" %></li>
-      <%end%>
-    </ul>
+      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select a Material
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <% @categories.each do |category| %>
+          <li><%= link_to category.name, shoes_path(filter: category.name), class: "btn btn-default" %></li>
+        <%end%>
+      </ul>
 
-    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select a Size
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <% @categories.each do |category| %>
-        <li><%= link_to category.name, shoes_path(filter: category.name), class: "btn btn-default" %></li>
-      <%end%>
-    </ul>
+      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select a Size
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <% @categories.each do |category| %>
+          <li><%= link_to category.name, shoes_path(filter: category.name), class: "btn btn-default" %></li>
+        <%end%>
+      </ul>
 
-    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select on Price
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <% @categories.each do |category| %>
-        <li><%= link_to category.name, shoes_path(filter: category.name), class: "btn btn-default" %></li>
-      <%end%>
-    </ul>
+      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select on Price
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <% @categories.each do |category| %>
+          <li><%= link_to category.name, shoes_path(filter: category.name), class: "btn btn-default" %></li>
+        <%end%>
+      </ul>
 
-  </div>
-</div>
-
-<div class="col-md-12">
-  <% @shoes.each do |shoe| %>
-    <div class="col-md-3">
-      <%= image_tag shoe.image, class: "shoe_images"%>
-      <h3><%= link_to shoe.name, shoe_path(shoe)%></h3>
     </div>
-  <%end%>
-</div>
+  </div>
+
+  <div class="col-md-12">
+    <% @shoes.each do |shoe| %>
+      <div class="col-md-3">
+        <%= image_tag shoe.image, class: "shoe_images"%>
+        <h3><%= link_to shoe.name, shoe_path(shoe)%></h3>
+      </div>
+    <%end%>
+  </div>
