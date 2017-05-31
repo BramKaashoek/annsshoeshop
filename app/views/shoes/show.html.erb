@@ -9,7 +9,7 @@
     <h5>Color: <%= @shoe.color %></h5>
     <h5>Material: <%= @shoe.material %></h5>
     <h5>Size: <%= @shoe.size %></h5>
-    <h1>€ <%= @shoe.price %></h1>
+    <h1>€ <%= '%.2f' % [@shoe.price] %></h1>
     <%= link_to "Buy Now", new_cart_path(user_id: current_user, shoe_id: @shoe.id), class: "btn btn-primary"%>
   </div>
 
@@ -17,7 +17,7 @@
     <h1>&nbsp;</h1>
     <ul class="list-unstyled">
     <% @shoe.categories.each do |category| %>
-    <li><%= link_to category.name, shoes_path(filter: category.name ), class: "btn btn-default" %></li>
+    <li><%= link_to category.name, shoes_path(cat: category.name ), class: "btn btn-default" %></li>
     <br>
     <% end %>
   </ul>

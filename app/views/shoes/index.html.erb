@@ -57,16 +57,17 @@
     <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select on Price
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
-        <li><a href="#">< €20</a></li>
-        <li><a href="#">€20 - €40</a></li>
-        <li><a href="#">€40 - €70</a></li>
-        <li><a href="#">€70 - €100</a></li>
-        <li><a href="#">€100 - €200</a></li>
-        <li><a href="#">> €200</a></li>
+        <li><%= link_to "< €20", shoes_path(price_bottom: 0, price_upper: 20)%></li>
+        <li><%= link_to "€21 - €40", shoes_path(price_bottom: 20, price_upper: 40)%></li>
+        <li><%= link_to "€41 - €70", shoes_path(price_bottom: 40, price_upper: 70)%></li>
+        <li><%= link_to "€71 - €100", shoes_path(price_bottom: 70, price_upper: 100)%></li>
+        <li><%= link_to "€101 - €200", shoes_path(price_bottom: 100, price_upper: 200)%></li>
+        <li><%= link_to "> €200", shoes_path(price_bottom: 200, price_upper: 10000)%></li>
     </ul>
    </div>
  </div>
 
+<div class="container text-center">
   <div class="col-md-12">
     <% @shoes.each do |shoe| %>
       <div class="col-md-3">
@@ -75,3 +76,4 @@
       </div>
     <%end%>
   </div>
+</div>

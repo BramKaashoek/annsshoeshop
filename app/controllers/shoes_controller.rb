@@ -17,9 +17,11 @@ class ShoesController < ApplicationController
      if (params.has_key?(:siz))
        @shoes = Shoe.where(size: params[:siz])
      end
-     if (params.has_key?(:pri))
-       @shoes = Shoe.where(price: params[:pri])
+
+     if (params.has_key?(:price_bottom))
+       @shoes = Shoe.where("price > ?", params[:price_bottom]).where("price <= ?", params[:price_upper])
      end
+
     @categories = Category.all
   end
 
