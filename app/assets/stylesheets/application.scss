@@ -8,12 +8,17 @@
 //   height: 200px;
 // }
 
+.show {
+margin-top: 60px;
+}
+
+
 .jumbotron {
 
   height: 600px;
   background-image: url("http://res.cloudinary.com/dfkclhjps/image/upload/v1496146396/annsshoeshop2_ac9bjj.jpg");
   background-size: cover;
-  margin-top: 0px;
+  margin-top: 40px;
 }
 
 .navbar-color {
@@ -54,3 +59,12 @@
 /*.col-md-3 {
   text-align: center;
 }*/
+footer.navbar-default.navbar-fixed-bottom  {
+      background:red;
+      color:white;
+      padding:1em 0;
+ }
+ footer.navbar-default.navbar-fixed-bottom p
+ {
+      margin:0;
+ }
