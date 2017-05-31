@@ -43,7 +43,7 @@
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= image_tag("http://res.cloudinary.com/dfkclhjps/image/upload/v1496150788/noun_18806_cc_cmqacc.png", height: "40") %> </a>
 
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-          <li><a href="#">View Shopping Cart</a></li>
+          <li> <%= link_to "View Shopping Cart", carts_path %></li>
           <li role="separator" class="divider"></li>
           <li><a href="#"><li>Check Out</a></li>
         </ul>
