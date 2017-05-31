@@ -2,55 +2,67 @@
 </div>
 
 <div class="container text-center">
-  <div class="dropdown">
+  <div class="btn-group">
     <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select a Category
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
       <% @categories.each do |category| %>
-        <li><%= link_to category.name, shoes_path(filter: category.name), class: "btn btn-default" %></li>
+        <li><%= link_to category.name, shoes_path(cat: category.name) %></li>
       <%end%>
     </ul>
+  </div>
 
+  <div class="btn-group">
     <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select a Brand
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
-      <% @categories.each do |category| %>
-        <li><%= link_to category.name, shoes_path(filter: category.name), class: "btn btn-default" %></li>
+      <% Shoe.select("DISTINCT brand").order(:brand).each do |shoe| %>
+        <li><%= link_to shoe.brand, shoes_path(bra: shoe.brand) %></li>
       <%end%>
     </ul>
+  </div>
 
+  <div class="btn-group">
     <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select a Color
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
-      <% @categories.each do |category| %>
-        <li><%= link_to category.name, shoes_path(filter: category.name), class: "btn btn-default" %></li>
+      <% Shoe.select("DISTINCT color").order(:color).each do |shoe| %>
+        <li><%= link_to shoe.color, shoes_path(col: shoe.color) %></li>
       <%end%>
     </ul>
+  </div>
 
+  <div class="btn-group">
     <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select a Material
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
-      <% @categories.each do |category| %>
-        <li><%= link_to category.name, shoes_path(filter: category.name), class: "btn btn-default" %></li>
+      <% Shoe.select("DISTINCT material").order(:material).each do |shoe| %>
+        <li><%= link_to shoe.material, shoes_path(mat: shoe.material) %></li>
       <%end%>
     </ul>
+  </div>
 
+  <div class="btn-group">
     <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select a Size
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
-      <% @categories.each do |category| %>
-        <li><%= link_to category.name, shoes_path(filter: category.name), class: "btn btn-default" %></li>
+      <% Shoe.select("DISTINCT size").order(:size).each do |shoe| %>
+        <li><%= link_to shoe.size, shoes_path(siz: shoe.size) %></li>
       <%end%>
     </ul>
+  </div>
 
+  <div class="btn-group">
     <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select on Price
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
-      <% @categories.each do |category| %>
-        <li><%= link_to category.name, shoes_path(filter: category.name), class: "btn btn-default" %></li>
-      <%end%>
+        <li><a href="#">< €20</a></li>
+        <li><a href="#">€20 - €40</a></li>
+        <li><a href="#">€40 - €70</a></li>
+        <li><a href="#">€70 - €100</a></li>
+        <li><a href="#">€100 - €200</a></li>
+        <li><a href="#">> €200</a></li>
     </ul>
-
   </div>
 </div>
 
