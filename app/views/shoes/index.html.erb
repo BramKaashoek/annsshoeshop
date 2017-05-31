@@ -1,6 +1,7 @@
 <div class="jumbotron">
 </div>
 
+
 <div class="container text-center">
   <div class="btn-group">
     <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select a Category
@@ -63,14 +64,14 @@
         <li><a href="#">€100 - €200</a></li>
         <li><a href="#">> €200</a></li>
     </ul>
-  </div>
-</div>
+   </div>
+ </div>
 
-<div class="col-md-12">
-  <% @shoes.each do |shoe| %>
-    <div class="col-md-3">
-      <%= image_tag shoe.image, class: "shoe_images"%>
-      <h3><%= link_to shoe.name, shoe_path(shoe)%></h3>
-    </div>
-  <%end%>
-</div>
+  <div class="col-md-12">
+    <% @shoes.each do |shoe| %>
+      <div class="col-md-3">
+        <%= image_tag shoe.image, class: "shoe_images"%>
+        <h3><%= link_to shoe.name, shoe_path(shoe)%></h3>
+      </div>
+    <%end%>
+  </div>
