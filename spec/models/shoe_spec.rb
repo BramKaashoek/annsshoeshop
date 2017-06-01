@@ -3,7 +3,9 @@ require 'rails_helper'
 RSpec.describe Shoe, type: :model do
 
   describe "associations" do
-
+    it { should have_many(:shoe_categories) }
+    it { should have_many(:categories).through(:shoe_categories) }
+    it {should have_many(:cart_items) }
   end
 
   describe "validations" do
