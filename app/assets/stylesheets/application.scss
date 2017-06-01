@@ -12,6 +12,10 @@
 margin-top: 60px;
 }
 
+.navbar-form {
+  padding-top: 10px;
+}
+
 .jumbotron {
   height: 600px;
   background-image: url("http://res.cloudinary.com/dfkclhjps/image/upload/v1496146396/annsshoeshop2_ac9bjj.jpg");
@@ -43,4 +47,8 @@ margin-top: 60px;
   // -moz-transform: scale(1.3);
   -webkit-transform: scale(1.7);
   // transform: scale(1.3);
+}
+
+.no-search {
+  margin: 50px;
 }
