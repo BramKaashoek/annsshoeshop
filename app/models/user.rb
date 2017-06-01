@@ -5,7 +5,6 @@ class User < ApplicationRecord
   :recoverable, :rememberable, :trackable, :validatable
 
   has_one :profile
-  has_many :carts
 
   def has_profile?
     profile.present? && profile.persisted?

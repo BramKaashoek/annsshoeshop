@@ -1,6 +1,8 @@
 class ShoesController < ApplicationController
 
   def index
+    @cart = current_cart
+    @cart.save
     @shoes = Shoe.all
      if (params.has_key?(:cat))
        @shoes = Shoe.joins(:categories).where(categories: { name: params[:cat] })
@@ -27,6 +29,6 @@ class ShoesController < ApplicationController
 
   def show
     @shoe = Shoe.find(params[:id])
+    @cart_item = current_cart.cart_items.new
   end
-
 end

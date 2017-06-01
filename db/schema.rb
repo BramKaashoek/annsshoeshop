@@ -10,19 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170531064413) do
+ActiveRecord::Schema.define(version: 20170531144511) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "carts", force: :cascade do |t|
-    t.bigint "user_id"
+  create_table "cart_items", force: :cascade do |t|
+    t.bigint "cart_id"
     t.bigint "shoe_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cart_id"], name: "index_cart_items_on_cart_id"
+    t.index ["shoe_id"], name: "index_cart_items_on_shoe_id"
+  end
+
+  create_table "carts", force: :cascade do |t|
     t.boolean "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["shoe_id"], name: "index_carts_on_shoe_id"
-    t.index ["user_id"], name: "index_carts_on_user_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -111,11 +116,8 @@ ActiveRecord::Schema.define(version: 20170531064413) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "carts", "shoes"
-  add_foreign_key "carts", "users"
-  add_foreign_key "order_items", "orders"
-  add_foreign_key "order_items", "shoes"
-  add_foreign_key "orders", "order_statuses"
+  add_foreign_key "cart_items", "carts"
+  add_foreign_key "cart_items", "shoes"
   add_foreign_key "profiles", "users"
   add_foreign_key "shoe_categories", "categories"
   add_foreign_key "shoe_categories", "shoes"
