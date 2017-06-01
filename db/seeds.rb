@@ -27,7 +27,3 @@ shoe13=Shoe.create!(name: "Business Shoes", image: "http://res.cloudinary.com/df
 shoe14=Shoe.create!(name: "Men's Espadrilles", image: "http://res.cloudinary.com/dfkclhjps/image/upload/v1496156259/YO112C00M-N11_12_e4qtyf.jpg", brand: "Toms", price: 35, size: 45, color: "olive-green" , material: "fabric", release_year: 2010, categories: [cat3, cat6])
 shoe15=Shoe.create!(name: "Casual Men's Blue", image: "http://res.cloudinary.com/dfkclhjps/image/upload/v1496156720/P1312I008-K12_12_eyq65b.jpg", brand: "Palladium", price: 95, size: 47, color: "bright-blue", material: "fabric", release_year: 1995, categories: [cat6])
 shoe16=Shoe.create!(name: "Very Yellow Mocassin", image: "http://res.cloudinary.com/dfkclhjps/image/upload/v1496156385/PI912CA0D-E11_12_tuduym.jpg", brand: "Pier One", price: 90, size: 46, color: "mustard-yellow", material: "suede", release_year: 2008, categories: [cat3, cat4])
-
-cart1=Cart.create!(active: true)
-
-cart_item1=CartItem.create!(cart: cart1, shoe: shoe1)

@@ -1,9 +1,12 @@
-<h1>cart</h1>
-<h1>cart</h1>
-<h1>cart</h1>
-<h1>cart</h1>
-<h1>cart</h1>
-<% @cart.cart_items.each do |item| %>
-<p><%= item.shoe.name %></p>
-<%= @cart.total_price %>
+<h1>Your cart</h1>
+<% @cart.shoes.each do |shoe| %>
+<div>
+  <p><%= shoe.brand %></p>
+  <p><%= shoe.name %></p>
+  <p><%= shoe.price %></p>
+  <p>.</p>
+</div>
+
+
 <% end %>
+<h1>Total Price: <%= @cart.total_price %></h1>
