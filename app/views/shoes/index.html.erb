@@ -1,64 +1,79 @@
 <div class="jumbotron">
 </div>
 
+
 <div class="container text-center">
-  <div class="dropdown">
+  <div class="btn-group">
     <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select a Category
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
       <% @categories.each do |category| %>
-        <li><%= link_to category.name, shoes_path(filter: category.name), class: "btn btn-default" %></li>
+        <li><%= link_to category.name, shoes_path(cat: category.name) %></li>
       <%end%>
     </ul>
+  </div>
 
+  <div class="btn-group">
     <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select a Brand
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
-      <% @categories.each do |category| %>
-        <li><%= link_to category.name, shoes_path(filter: category.name), class: "btn btn-default" %></li>
+      <% Shoe.select("DISTINCT brand").order(:brand).each do |shoe| %>
+        <li><%= link_to shoe.brand, shoes_path(bra: shoe.brand) %></li>
       <%end%>
     </ul>
+  </div>
 
+  <div class="btn-group">
     <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select a Color
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
-      <% @categories.each do |category| %>
-        <li><%= link_to category.name, shoes_path(filter: category.name), class: "btn btn-default" %></li>
+      <% Shoe.select("DISTINCT color").order(:color).each do |shoe| %>
+        <li><%= link_to shoe.color, shoes_path(col: shoe.color) %></li>
       <%end%>
     </ul>
+  </div>
 
+  <div class="btn-group">
     <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select a Material
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
-      <% @categories.each do |category| %>
-        <li><%= link_to category.name, shoes_path(filter: category.name), class: "btn btn-default" %></li>
+      <% Shoe.select("DISTINCT material").order(:material).each do |shoe| %>
+        <li><%= link_to shoe.material, shoes_path(mat: shoe.material) %></li>
       <%end%>
     </ul>
+  </div>
 
+  <div class="btn-group">
     <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select a Size
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
-      <% @categories.each do |category| %>
-        <li><%= link_to category.name, shoes_path(filter: category.name), class: "btn btn-default" %></li>
+      <% Shoe.select("DISTINCT size").order(:size).each do |shoe| %>
+        <li><%= link_to shoe.size, shoes_path(siz: shoe.size) %></li>
       <%end%>
     </ul>
+  </div>
 
+  <div class="btn-group">
     <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select on Price
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
-      <% @categories.each do |category| %>
-        <li><%= link_to category.name, shoes_path(filter: category.name), class: "btn btn-default" %></li>
-      <%end%>
+        <li><%= link_to "< €20", shoes_path(price_bottom: 0, price_upper: 20)%></li>
+        <li><%= link_to "€21 - €40", shoes_path(price_bottom: 20, price_upper: 40)%></li>
+        <li><%= link_to "€41 - €70", shoes_path(price_bottom: 40, price_upper: 70)%></li>
+        <li><%= link_to "€71 - €100", shoes_path(price_bottom: 70, price_upper: 100)%></li>
+        <li><%= link_to "€101 - €200", shoes_path(price_bottom: 100, price_upper: 200)%></li>
+        <li><%= link_to "> €200", shoes_path(price_bottom: 200, price_upper: 10000)%></li>
     </ul>
+   </div>
+ </div>
 
+<div class="container text-center">
+  <div class="col-md-12">
+    <% @shoes.each do |shoe| %>
+      <div class="col-md-3">
+        <%= image_tag shoe.image, class: "shoe_images"%>
+        <h3><%= link_to shoe.name, shoe_path(shoe)%></h3>
+      </div>
+    <%end%>
   </div>
-</div>
-
-<div class="col-md-12">
-  <% @shoes.each do |shoe| %>
-    <div class="col-md-3">
-      <%= image_tag shoe.image, class: "shoe_images"%>
-      <h3><%= link_to shoe.name, shoe_path(shoe)%></h3>
-    </div>
-  <%end%>
 </div>
