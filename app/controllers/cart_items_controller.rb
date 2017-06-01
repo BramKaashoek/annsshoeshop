@@ -5,8 +5,6 @@ class CartItemsController < ApplicationController
     @cart_item = @cart.cart_items.new(cart_item_params)
     @cart.save
     session[:cart_id] = @cart.id
-    redirect_to root_path
-    binding.pry
   end
 
   def update
