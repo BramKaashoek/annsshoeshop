@@ -7,6 +7,13 @@
 
   <div id="navbar" class="navbar-collapse collapse">
     <ul class="nav navbar-nav navbar-right">
+      <li>
+      <%= form_tag shoes_path, :method => 'get', class: 'navbar-form'  do %>
+      <%= text_field_tag :search, params[:search], class: 'form-control', placeholder: 'Search...' %>
+      <span class="input-group-btn">
+      </span>
+      <% end %>
+    </li>
 
       <% if !user_signed_in? %>
 

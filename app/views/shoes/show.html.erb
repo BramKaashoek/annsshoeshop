@@ -9,7 +9,7 @@
     <h5>Color: <%= @shoe.color %></h5>
     <h5>Material: <%= @shoe.material %></h5>
     <h5>Size: <%= @shoe.size %></h5>
-    <h1>€ <%= @shoe.price %></h1>
+    <h1>€ <%= '%.2f' % @shoe.price %></h1>
     <%= form_for @cart_item, remote: true do |f| %>
     <%= f.hidden_field :shoe_id, value: @shoe.id %>
     <%= f.submit "Add to cart", class: "btn btn-primary"  %>
