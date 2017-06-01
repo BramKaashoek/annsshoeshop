@@ -1,6 +1,8 @@
 class ShoesController < ApplicationController
 
   def index
+    @cart = current_cart
+    @cart.save
     @shoes = Shoe.all
      if (params.has_key?(:filter))
        @shoes = Shoe.joins(:categories).where(categories: { name: params[:filter] })
