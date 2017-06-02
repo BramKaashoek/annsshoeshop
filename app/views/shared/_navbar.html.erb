@@ -71,12 +71,11 @@ $('.clear').click(function() {
       <% end %>
 
       <li id="toggle">
-      <%= link_to image_tag("http://res.cloudinary.com/dfkclhjps/image/upload/v1496150788/noun_18806_cc_cmqacc.png", height: "40"), show_cart_url %>
+        <div id="cart_div">
+          <span class="badge cart-counter">0</span>
+          <%= link_to image_tag("http://res.cloudinary.com/dfkclhjps/image/upload/v1496150788/noun_18806_cc_cmqacc.png", height: "40"), show_cart_url %>
+        </div>
       </li>
-      <li><span class="badge">0</span></li>
-
-
-
     </ul>
   </div>
   </div>
