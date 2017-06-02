@@ -1,22 +1,38 @@
 <script src="//code.jquery.com/jquery-1.12.4.js"></script>
 <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
+
+$(document).ready(function() {
   $("#click").click(function() {
   $("#toggle").effect("shake");
 });
-
-var itemCount = 0;
-
-$('.add').click(function (){
-  itemCount ++;
-  $('#itemCount').html(itemCount).css('display', 'block');
 });
 
-$('.clear').click(function() {
-  itemCount = 0;
-  $('#itemCount').html('').css('display', 'none');
-  $('#cartItems').html('');
-});
+// $("#click").bind('click', updateCartCounter);
+// updateCartCounter();
+// });
+
+ // function updateCartCounter (){
+ //   var count = <%= current_cart.cart_items.count %>;
+ //   $("#counter").html(count);
+ //
+ // }
+
+$(document).ready(function() {
+  var count = <%= current_cart.cart_items.count %>;
+  $("#click").click(function() {
+  count++;
+  $("#counter").html(count);
+  });
+  });
+
+$(document).ready(function() {
+  var count = <%= current_cart.cart_items.count %>;
+  $("#clickneg").click(function() {
+  count--;
+  $("#counter").html(count);
+  });
+  });
 </script>
 
 <nav class="navbar navbar-transparent navbar-fixed-top">
