@@ -4,7 +4,6 @@
     <link rel="icon" type="image/png" href="http://res.cloudinary.com/elizabeth2000/image/upload/v1496229432/favicon_ltux9n.png">
     <title>Ann's Shoe Shop</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -14,5 +13,12 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
+
+    <div class="push">
+    </div>
+
+    <div class="footer container text-center">
+      <p>&copy; Ann's Shoe Shop</p>
+    </div>
   </body>
 </html>

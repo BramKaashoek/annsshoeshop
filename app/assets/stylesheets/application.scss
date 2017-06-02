@@ -8,16 +8,32 @@
 //   height: 200px;
 // }
 
+footer, .push {
+    height: 50px;
+}
+
+.log-in {
+  margin-top: 50px;
+}
+
 .show {
 margin-top: 60px;
 }
 
-.navbar-form {
+.navbar-form{
   padding-top: 10px;
 }
 
+#cart_div {
+  padding-top: 15px;
+}
+
+.badge {
+  margin-top: 15px;
+}
+
 .jumbotron {
-  height: 600px;
+  height: 500px;
   background-image: url("http://res.cloudinary.com/dfkclhjps/image/upload/v1496146396/annsshoeshop2_ac9bjj.jpg");
   background-size: cover;
   margin-top: 40px;
@@ -45,14 +61,17 @@ margin-top: 60px;
 
 .big_shoe:hover {
   // -moz-transform: scale(1.3);
-  -webkit-transform: scale(1.7);
+  -webkit-transform: scale(1.6);
   // transform: scale(1.3);
 }
 
 .no-search {
-  margin: 50px;
+  margin-top: 50px;
 }
 
+.small_image {
+  max-height: 70px;
+}
 
 .col-md-8 {
   padding: 30px;

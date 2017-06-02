@@ -73,14 +73,17 @@
          <li><%= link_to "High to Low", shoes_path(price_high: :desc)%></li>
      </ul>
     </div>
- </div>
+</div>
 
 <div class="container text-center">
   <div class="col-md-12">
     <% @shoes.each do |shoe| %>
       <div class="col-md-3">
-        <%= image_tag shoe.image, class: "shoe_images"%>
+        <%= link_to shoe_path(shoe) do %>
+        <%= image_tag shoe.image, class: "shoe_images" %>
+        <%end%>
         <h3><%= link_to shoe.name, shoe_path(shoe)%></h3>
+        <h4>€ <%= '%.2f' % shoe.price %></h4>
       </div>
     <%end%>
   </div>
@@ -88,6 +91,6 @@
 
 <div class="container text-center no-search">
   <% if @shoes.blank? %>
-    <h4>There are no shoes containing the term <%= params[:search]%>.</h4>
+    <h4>The shoes you were looking for do not exist.</h4>
   <% end %>
 </div>
