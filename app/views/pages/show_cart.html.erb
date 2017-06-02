@@ -21,8 +21,10 @@
     <td><%= cart_item.shoe.brand %></td>
     <td><%= cart_item.shoe.name %></td>
     <td>€ <%= '%.2f' % cart_item.shoe.price %></td>
-    <td>  <%= link_to "x", cart_item, method: :delete, data: { confirm: "You are about to remove #{cart_item.shoe.name} from your cart." },class: "btn btn-default" %></td>
-    </tr>
+    <td><div id="clickneg">
+    <%= link_to "x", cart_item, method: :delete, data: { confirm: "You are about to remove #{cart_item.shoe.name} from your cart." },class: "btn btn-default" %>
+    </div></td>
+  </tr>
 <% end %>
  <tr>
    <th></th>

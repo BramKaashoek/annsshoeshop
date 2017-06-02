@@ -2,25 +2,40 @@
 <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <script>
+
+$(document).ready(function() {
   $("#click").click(function() {
   $("#toggle").effect("shake");
 });
-
-var itemCount = 0;
-
-$('.add').click(function (){
-  itemCount ++;
-  $('#itemCount').html(itemCount).css('display', 'block');
 });
 
-$('.clear').click(function() {
-  itemCount = 0;
-  $('#itemCount').html('').css('display', 'none');
-  $('#cartItems').html('');
-});
+// $("#click").bind('click', updateCartCounter);
+// updateCartCounter();
+// });
+
+ // function updateCartCounter (){
+ //   var count = <%= current_cart.cart_items.count %>;
+ //   $("#counter").html(count);
+ //
+ // }
+
+$(document).ready(function() {
+  var count = <%= current_cart.cart_items.count %>;
+  $("#click").click(function() {
+  count++;
+  $("#counter").html(count);
+  });
+  });
+
+$(document).ready(function() {
+  var count = <%= current_cart.cart_items.count %>;
+  $("#clickneg").click(function() {
+  count--;
+  $("#counter").html(count);
+  });
+  });
 
 </script>
-
 
 <nav class="navbar navbar-transparent navbar-fixed-top">
   <div class="navbar-color">
@@ -71,10 +86,11 @@ $('.clear').click(function() {
       <% end %>
 
       <li id="toggle">
-        <div id="cart_div">
-          <span class="badge cart-counter">0</span>
+        <!-- <div id="cart_div"> -->
+          <span class="badge cart-counter"><div id="counter"><%= current_cart.cart_items.count %></div></span>
           <%= link_to image_tag("http://res.cloudinary.com/dfkclhjps/image/upload/v1496150788/noun_18806_cc_cmqacc.png", height: "40"), show_cart_url %>
-        </div>
+        <!-- </div> -->
+
       </li>
     </ul>
   </div>
