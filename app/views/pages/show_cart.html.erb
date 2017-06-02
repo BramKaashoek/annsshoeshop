@@ -23,9 +23,10 @@
             <td>  <%= link_to "x", cart_item, method: :delete, data: { confirm: "You are about to remove #{cart_item.shoe.name} from your cart." },class: "btn btn-default" %></td>
           </tr>
         <% end %>
+      </table>
+      <table>
          <tr><h1>Your Total: € <%= '%.2f' % @cart.total_price %></h1></tr>
          <tr><%= link_to "Checkout", root_path, :onclick => 'alert("Thank you for your order")', class: "btn btn-lg btn-warning", span: "glyphicon glyphicon-download-alt"%></tr>
       </table>
     </div>
   </section>
-

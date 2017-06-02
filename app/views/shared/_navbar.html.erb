@@ -81,10 +81,11 @@ $(document).ready(function() {
           <% end %>
 
           <li id="toggle">
-            <div id="cart_div">
-              <span class="badge cart-counter">0</span>
+            <!-- <div id="cart_div"> -->
+              <span class="badge cart-counter"><div id="counter">
+                <%= current_cart.cart_items.count %></div></span>
               <%= link_to image_tag("http://res.cloudinary.com/dfkclhjps/image/upload/v1496150788/noun_18806_cc_cmqacc.png", height: "40"), show_cart_url %>
-            </div>
+            <!-- </div> -->
           </li>
         </ul>
       </div>
