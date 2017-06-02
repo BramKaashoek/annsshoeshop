@@ -1,3 +1,27 @@
+<script src="//code.jquery.com/jquery-1.12.4.js"></script>
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+  $("#click").click(function() {
+  $("#toggle").effect("shake");
+});
+
+var itemCount = 0;
+
+$('.add').click(function (){
+  itemCount ++;
+  $('#itemCount').html(itemCount).css('display', 'block');
+});
+
+$('.clear').click(function() {
+  itemCount = 0;
+  $('#itemCount').html('').css('display', 'none');
+  $('#cartItems').html('');
+});
+
+</script>
+
+
 <nav class="navbar navbar-transparent navbar-fixed-top">
   <div class="navbar-color">
   <div class="container">
@@ -13,47 +37,44 @@
       <span class="input-group-btn">
       </span>
       <% end %>
-    </li>
+      </li>
 
       <% if !user_signed_in? %>
 
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= image_tag("http://res.cloudinary.com/dfkclhjps/image/upload/v1496152947/avatar-inside-a-circle_1_shte25.png", height: "40") %> </a>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= image_tag("http://res.cloudinary.com/dfkclhjps/image/upload/v1496152947/avatar-inside-a-circle_1_shte25.png", height: "40") %> </a>
 
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li><a href="#"><%= link_to "Log In", new_user_session_path %></a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#"><li><%= link_to "Sign Up", new_user_registration_path %></a></li>
-          </ul>
-        </li>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a href="#"><%= link_to "Log In", new_user_session_path %></a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#"><li><%= link_to "Sign Up", new_user_registration_path %></a></li>
+        </ul>
+      </li>
 
       <% else %>
 
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= image_tag((current_user.has_profile? ? current_user.profile.profile_picture : "http://res.cloudinary.com/elizabeth2000/image/upload/v1496172081/avatar-inside-a-circle_1_shte25_1_ys03ve.png"), height: "40") %> </a>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= image_tag((current_user.has_profile? ? current_user.profile.profile_picture : "http://res.cloudinary.com/elizabeth2000/image/upload/v1496172081/avatar-inside-a-circle_1_shte25_1_ys03ve.png"), height: "40") %> </a>
 
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <% if current_user.has_profile? %>
-              <li><a href="#"><%= link_to "Edit Profile", edit_profile_path(current_user.profile) %></a></li>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <% if current_user.has_profile? %>
+            <li><a href="#"><%= link_to "Edit Profile", edit_profile_path(current_user.profile) %></a></li>
             <% else %>
-              <li><a href="#"><%= link_to "Create Profile", new_profile_path %></a></li>
+            <li><a href="#"><%= link_to "Create Profile", new_profile_path %></a></li>
             <% end %>
             <li><%= link_to "Change Password", edit_user_registration_path %></li>
             <li role="separator" class="divider"></li>
             <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-          </ul>
-        </li>
+        </ul>
+      </li>
 
       <% end %>
 
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= image_tag("http://res.cloudinary.com/dfkclhjps/image/upload/v1496150788/noun_18806_cc_cmqacc.png", height: "40") %> </a>
-
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-          <li> <%= link_to "View Shopping Cart", show_cart_url %></li>
-          <li role="separator" class="divider"></li>
-          <li><a href="#"><li>Check Out</a></li>
-        </ul>
+      <li id="toggle">
+        <div id="cart_div">
+          <span class="badge cart-counter">0</span>
+          <%= link_to image_tag("http://res.cloudinary.com/dfkclhjps/image/upload/v1496150788/noun_18806_cc_cmqacc.png", height: "40"), show_cart_url %>
+        </div>
       </li>
     </ul>
   </div>
