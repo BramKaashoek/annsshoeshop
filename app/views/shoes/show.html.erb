@@ -1,18 +1,19 @@
 <div class="show">
-<section class="container">
-  <div class="col-md-6">
+  <section class="container">
+    <div class="col-md-6">
     <%= image_tag @shoe.image, class:"big_shoe" %>
-  </div>
-  <div class="col-md-4">
-    <h1><%= @shoe.name %></h1>
-    <h3><%= @shoe.brand %></h3>
-    <h5>Color: <%= @shoe.color %></h5>
-    <h5>Material: <%= @shoe.material %></h5>
-    <h5>Size: <%= @shoe.size %></h5>
-    <h1>€ <%= '%.2f' % @shoe.price %></h1>
-    <%= form_for @cart_item, remote: true do |f| %>
-    <%= f.hidden_field :shoe_id, value: @shoe.id %>
-    <%= f.submit "Add to cart", class: "btn btn-primary"  %>
+    </div>
+
+    <div class="col-md-4">
+      <h1><%= @shoe.name %></h1>
+      <h3><%= @shoe.brand %></h3>
+      <h5>Color: <%= @shoe.color %></h5>
+      <h5>Material: <%= @shoe.material %></h5>
+      <h5>Size: <%= @shoe.size %></h5>
+      <h1>€ <%= '%.2f' % @shoe.price %></h1>
+      <%= form_for @cart_item, remote: true do |f| %>
+      <%= f.hidden_field :shoe_id, value: @shoe.id %>
+      <div id="click"> <%= f.submit "Add to cart", class: "btn btn-primary" %></div>
     <% end %>
   </div>
 
