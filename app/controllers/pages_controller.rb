@@ -2,6 +2,6 @@ class PagesController < ApplicationController
 
   def show_cart
     @cart = current_cart
-    @shoes = @cart.shoes
+    @cart_items = @cart.cart_items
   end
 end
